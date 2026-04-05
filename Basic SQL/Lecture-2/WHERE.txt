@@ -1,0 +1,71 @@
+🔹 WHERE Clause (Basic Syntax)
+SELECT * 
+FROM table_name
+WHERE condition;
+🔸 Comparison Operators in SQL
+Operator	Meaning	Example
+=	Equal to	marks = 80
+!= or <>	Not equal to	marks != 80
+>	Greater than	marks > 60
+<	Less than	marks < 60
+>=	Greater than or equal	marks >= 60
+<=	Less than or equal	marks <= 60
+✅ Examples
+1. Equal to (=)
+SELECT * FROM students
+WHERE class = '10';
+2. Not Equal (!= or <>)
+SELECT * FROM students
+WHERE class != '10';
+SELECT * FROM students
+WHERE class <> '10';
+3. Greater Than (>)
+SELECT * FROM students
+WHERE marks > 75;
+4. Less Than (<)
+SELECT * FROM students
+WHERE marks < 40;
+5. Greater Than or Equal (>=)
+SELECT * FROM students
+WHERE marks >= 60;
+6. Less Than or Equal (<=)
+SELECT * FROM students
+WHERE marks <= 35;
+🔹 Other Important Comparison Conditions (Used with WHERE)
+🔸 BETWEEN
+SELECT * FROM students
+WHERE marks BETWEEN 50 AND 80;
+🔸 IN
+SELECT * FROM students
+WHERE class IN ('9', '10', '11');
+🔸 NOT IN
+SELECT * FROM students
+WHERE class NOT IN ('9', '10');
+🔸 LIKE (Pattern Matching)
+SELECT * FROM students
+WHERE name LIKE 'R%';   -- starts with R
+SELECT * FROM students
+WHERE name LIKE '%a';   -- ends with a
+SELECT * FROM students
+WHERE name LIKE '%an%'; -- contains 'an'
+🔸 IS NULL
+SELECT * FROM students
+WHERE phone IS NULL;
+🔸 IS NOT NULL
+SELECT * FROM students
+WHERE phone IS NOT NULL;
+🔹 Logical Operators with WHERE
+Operator	Meaning
+AND	All conditions must be true
+OR	Any one condition true
+NOT	Reverse condition
+Example:
+SELECT * FROM students
+WHERE class = '10' AND marks > 70;
+SELECT * FROM students
+WHERE class = '10' OR class = '9';
+SELECT * FROM students
+WHERE NOT class = '10';
+🧠 One-Line Definition
+
+WHERE clause is used to filter records based on conditions using comparison and logical operators.

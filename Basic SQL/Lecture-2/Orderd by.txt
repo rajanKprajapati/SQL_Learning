@@ -1,0 +1,74 @@
+🔹 Basic Syntax
+SELECT column1, column2
+FROM table_name
+ORDER BY column_name;
+🔹 Types of Sorting
+1. Ascending Order (Default)
+SELECT * FROM students
+ORDER BY marks;
+
+👉 Sorts marks from lowest to highest (ASC is default)
+
+OR
+
+ORDER BY marks ASC;
+2. Descending Order
+SELECT * FROM students
+ORDER BY marks DESC;
+
+👉 Sorts marks from highest to lowest
+
+🔹 Multiple Column Sorting
+SELECT * FROM students
+ORDER BY class ASC, marks DESC;
+
+👉 First sorts by class (A→Z), then by marks (high→low) within each class
+
+🔹 ORDER BY with WHERE
+SELECT * FROM students
+WHERE class = '10'
+ORDER BY marks DESC;
+🔹 ORDER BY with LIMIT
+SELECT * FROM students
+ORDER BY marks DESC
+LIMIT 5;
+
+👉 Top 5 students by marks
+
+🔹 ORDER BY using Column Number
+SELECT name, marks, age
+FROM students
+ORDER BY 2 DESC;
+
+👉 Sorts by 2nd column (marks)
+
+🔹 ORDER BY with Aggregate Functions
+SELECT class, AVG(marks) AS avg_marks
+FROM students
+GROUP BY class
+ORDER BY avg_marks DESC;
+✅ Uses of ORDER BY
+
+Rank students
+
+Sort products by price
+
+Arrange data by date
+
+Display highest/lowest values
+
+Report generation
+
+Leaderboards
+
+Result formatting
+
+⚠️ Important Notes
+
+ORDER BY is always written at the end of the query
+
+Default order is ASC
+
+Works with numbers, strings, dates
+
+Can use aliases in ORDER BY

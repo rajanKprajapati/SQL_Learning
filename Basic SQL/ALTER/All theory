@@ -1,0 +1,156 @@
+✅ Common Operations
+1. Add a new column
+ALTER TABLE table_name
+ADD column_name datatype;
+
+👉 Example:
+
+ALTER TABLE students
+ADD age INT;
+2. Modify an existing column (datatype/size)
+ALTER TABLE table_name
+MODIFY column_name new_datatype;
+
+👉 Example:
+
+ALTER TABLE students
+MODIFY age FLOAT;
+3. Rename a column
+ALTER TABLE table_name
+RENAME COLUMN old_name TO new_name;
+
+👉 Example:
+
+ALTER TABLE students
+RENAME COLUMN age TO student_age;
+4. Delete a column
+ALTER TABLE table_name
+DROP COLUMN column_name;
+
+👉 Example:
+
+ALTER TABLE students
+DROP COLUMN student_age;
+5. Rename a table
+ALTER TABLE old_table_name
+RENAME TO new_table_name;
+
+👉 Example:
+
+ALTER TABLE students
+RENAME TO student_details;
+🎯 Simple Definition (Exam Ready)
+
+👉 ALTER is used to change the structure of an existing table in a database.
+
+
+🔹 Main Uses of ALTER
+
+You use ALTER when you want to change something in a table without deleting it.
+
+✅ Common Operations
+1. Add a new column
+ALTER TABLE table_name
+ADD column_name datatype;
+
+👉 Example:
+
+ALTER TABLE students
+ADD age INT;
+2. Modify an existing column (datatype/size)
+ALTER TABLE table_name
+MODIFY column_name new_datatype;
+
+👉 Example:
+
+ALTER TABLE students
+MODIFY age FLOAT;
+3. Rename a column
+ALTER TABLE table_name
+RENAME COLUMN old_name TO new_name;
+
+👉 Example:
+
+ALTER TABLE students
+RENAME COLUMN age TO student_age;
+4. Delete a column
+ALTER TABLE table_name
+DROP COLUMN column_name;
+
+👉 Example:
+
+ALTER TABLE students
+DROP COLUMN student_age;
+5. Rename a table
+ALTER TABLE old_table_name
+RENAME TO new_table_name;
+
+👉 Example:
+
+ALTER TABLE students
+RENAME TO student_details;
+🎯 Simple Definition (Exam Ready)
+
+👉 ALTER is used to change the structure of an existing table in a database.
+
+If you want, I can give you practice questions on ALTER or compare it with UPDATE (many students confuse them).
+
+Other uses of alter
+
+Good question 👍 — many students think ALTER is only for columns, but it has many more uses.
+
+Here are other important uses of ALTER in SQL 👇
+
+🔹 1. Add Constraints
+
+You can add rules to a table after it is created.
+
+ALTER TABLE students
+ADD CONSTRAINT pk_student PRIMARY KEY (id);
+
+👉 Used for:
+
+PRIMARY KEY
+FOREIGN KEY
+UNIQUE
+CHECK
+🔹 2. Drop Constraints
+
+Remove existing constraints.
+
+ALTER TABLE students
+DROP CONSTRAINT pk_student;
+🔹 3. Add Default Value
+
+Set a default value for a column.
+
+ALTER TABLE students
+ALTER COLUMN age SET DEFAULT 18;
+🔹 4. Remove Default Value
+ALTER TABLE students
+ALTER COLUMN age DROP DEFAULT;
+🔹 5. Change Column Name (Alternative syntax in some DBs)
+ALTER TABLE students
+CHANGE old_name new_name VARCHAR(50);
+
+👉 (Used in MySQL)
+
+🔹 6. Add / Drop Index
+ALTER TABLE students
+ADD INDEX idx_name (name);
+ALTER TABLE students
+DROP INDEX idx_name;
+🔹 7. Rename Constraints
+ALTER TABLE students
+RENAME CONSTRAINT old_name TO new_name;
+🔹 8. Change Table Properties
+
+(Some DBMS allow storage or engine changes)
+
+ALTER TABLE students
+ENGINE = InnoDB;
+🔹 9. Add Foreign Key
+ALTER TABLE orders
+ADD CONSTRAINT fk_customer
+FOREIGN KEY (customer_id)
+REFERENCES customers(id);

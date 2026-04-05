@@ -1,0 +1,202 @@
+1️⃣ What is NULL in SQL?
+
+NULL means "no value stored" or "unknown value".
+
+It does NOT mean:
+
+0
+
+empty string ''
+
+false
+
+It means the data is missing or not recorded.
+
+Example
+
+Table: skills_dim
+
+skill_id	skills	type
+0	python	programming
+1	r	programming
+2	sql	programming
+3	excel	NULL
+
+Here:
+
+excel → has no category stored
+
+So the type column is NULL.
+
+2️⃣ Important Rule
+
+You cannot compare NULL using =
+
+❌ Wrong
+
+SELECT *
+FROM skills_dim
+WHERE type = NULL;
+
+SQL will return no results.
+
+3️⃣ Correct Way to Check NULL
+Use IS NULL
+SELECT *
+FROM skills_dim
+WHERE type IS NULL;
+
+This finds rows where type is missing.
+
+4️⃣ Check NOT NULL
+
+To find rows where data exists:
+
+SELECT *
+FROM skills_dim
+WHERE type IS NOT NULL;
+5️⃣ NULL in Aggregation
+
+Aggregation functions treat NULL differently.
+
+Example:
+
+skill_id	salary
+1	50000
+2	NULL
+3	60000
+AVG()
+AVG = (50000 + 60000) / 2
+
+NULL is ignored, not counted.
+
+6️⃣ NULL in COUNT()
+
+Example table:
+
+skill	type
+python	programming
+sql	programming
+excel	NULL
+Query
+SELECT COUNT(type)
+FROM skills_dim;
+
+Result = 2
+
+Because NULL is ignored.
+
+But
+
+SELECT COUNT(*)
+FROM skills_dim;
+
+Result = 3
+
+Because COUNT(*) counts all rows.
+
+Now Practice Questions (Using Your Database)
+
+We will follow the same learning flow.
+
+Now we will create 6 tricky NULL-based SQL questions using your database jobs_2023 and the tables:
+
+company_dim
+
+job_postings_fact
+
+skills_dim
+
+skills_job_dim
+
+Each question will have different difficulty and learning value, similar to Data Analyst interview problems.
+
+NULL Practice Questions (Using Your Database)
+1️⃣ Missing Salary Information (Medium)
+Find job postings where both salary fields are missing.
+Return:
+job_id
+job_title
+salary_year_avg
+salary_hour_avg
+Table: job_postings_fact
+Concept tested:
+Multiple NULL conditions
+
+2️⃣ Incomplete Salary Data (Medium-Hard)
+Find job postings where only one salary value is present.
+Meaning:
+salary_year_avg is NULL but salary_hour_avg is NOT NULL
+OR
+salary_hour_avg is NULL but salary_year_avg is NOT NULL
+Return:
+job_id
+job_title
+salary_year_avg
+salary_hour_avg
+Concept tested:
+Logical conditions with NULL
+
+3️⃣ Companies With Unknown Job Location (Hard)
+Find companies that posted jobs where job_location is NULL.
+Return:
+company name
+number_of_jobs
+Tables used:
+job_postings_fact
+company_dim
+Concept tested:
+JOIN
+NULL filtering
+GROUP BY
+
+4️⃣ Skills That Are Never Used (Hard)
+Find skills that are not associated with any job posting.
+Return:
+skill_id
+skills
+Tables used:
+skills_dim
+skills_job_dim
+Concept tested:
+LEFT JOIN
+Detecting NULL after join
+This is a very common SQL interview trick.
+
+5️⃣ Remote Jobs Without Salary Info (Very Hard)
+Find remote jobs where:
+job_work_from_home = 1
+salary information is missing (salary_year_avg AND salary_hour_avg are NULL)
+Return:
+job_id
+job_title
+job_location
+Concept tested:
+Filtering
+NULL logic
+Real job dataset analysis
+
+6️⃣ Skills With Missing Category But Used in Jobs (Advanced)
+Find skills where:
+type is NULL
+but the skill appears in job postings
+Return:
+skill_id
+skills
+number_of_jobs_using_it
+Tables used:
+skills_dim
+skills_job_dim
+Concept tested:
+NULL filtering
+JOIN
+GROUP BY
+Data quality analysis
+This type of question appears in real analytics tasks.
+Important Interview Concepts About NULL
+
+1️⃣ NULL means unknown value
+2️⃣ Use IS NULL or IS NOT NULL
+3️⃣ NULL is ignored in aggregation
+4️⃣ COUNT(column) ignores NULL
+5️⃣ COUNT(*) counts all rows
