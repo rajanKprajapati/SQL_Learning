@@ -417,3 +417,6 @@ Analytical thinking
 Real Data Analyst SQL interview problems
 
 
+
+
+[def]: <Screenshot 2026-04-05 184353.png>
