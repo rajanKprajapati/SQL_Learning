@@ -68,7 +68,7 @@ ORDER BY
 LIMIT 10; 
 ```
 #### Visual:
-![Top paying Roles](assets\q1.png)
+<img src="assets/query1_jobs.png" width="600"/>
 
 ## 2: Skills Required for Top Paying Jobs
 
