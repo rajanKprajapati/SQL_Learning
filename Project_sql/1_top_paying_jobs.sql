@@ -1,5 +1,4 @@
 -- This is the QUERY-1
-
 SELECT
     j.job_id,
     j.job_title,
