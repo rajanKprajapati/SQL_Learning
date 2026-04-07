@@ -67,9 +67,7 @@ ORDER BY
     salary_year_avg DESC
 LIMIT 10; 
 ```
-#### Visual:
-<img src="assets/query1_jobs.png" width="600"/>
-
+![visula](Project_sql/2_top_paying_job_skills.csv)
 ## 2: Skills Required for Top Paying Jobs
 
 - Used CTE to first get top-paying jobs
